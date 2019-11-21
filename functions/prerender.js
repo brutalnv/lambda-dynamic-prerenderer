@@ -4,7 +4,7 @@ const puppeteer = require('puppeteer-core');
 exports.handler = async (event, context, callback) => {
 	const ERROR_MESSAGE = 'No query parameter given!';
 	const HEADERS = {
-		'Access-Control-Allow-Origin': 'prerender-demo.s3-website.eu-north-1.amazonaws.com',
+		'Access-Control-Allow-Origin': '*',
 		'Access-Control-Allow-Credentials': true,
 		'Access-Control-Request-Method': 'POST'
 	};
