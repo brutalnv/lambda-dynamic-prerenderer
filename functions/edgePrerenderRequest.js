@@ -57,7 +57,8 @@ function checkIfBot(userAgent) {
 			'Twitterbot',
 			'vkShare',
 			'W3C_Validator',
-			'WhatsApp'
+			'WhatsApp',
+			'facebookexternalhit'
 		];
 
 		let containsBotKeyword = botUserAgents.find(element => {
