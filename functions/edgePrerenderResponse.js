@@ -23,7 +23,7 @@ exports.handler = (event, context, callback) => {
 	const response = event.Records[0].cf.response;
 
 	// TODO: Change this URL!
-	const BASE_URL_RENDERER = 'https://40s5xkq0o4.execute-api.eu-north-1.amazonaws.com/dev/prerender/?url=';
+	const BASE_URL_RENDERER = 'https://gd98bvzmp8.execute-api.us-east-1.amazonaws.com/dev/prerender/?url=';
 	const HOST = request.headers['host'][0].value;
 	const PRERENDER_URL = request.headers['x-prerender-uri'][0].value;
 	const SHOULD_PRERENDER = request.headers['x-should-prerender'][0].value;
