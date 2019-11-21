@@ -30,7 +30,9 @@ exports.handler = async (event, context, callback) => {
 
 		return new Promise(async (resolve, reject) => {
 			let page = await browser.newPage();
-			await page.goto(targetUrl);
+			await page.goto(targetUrl, {
+				waitUntil: 'networkidle0'
+			});
 			const result = await page.content();
 			resolve(result);
 		}).then(result => {
