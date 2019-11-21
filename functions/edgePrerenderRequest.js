@@ -28,7 +28,8 @@ exports.handler = (event, context, callback) => {
 
 	request.headers['x-prerender-uri'] = [{ key: 'x-prerender-uri', value: request.uri }];
 
-	const SHOULD_PRERENDER = checkIfBot(realUserAgent).toString();
+	//const SHOULD_PRERENDER = checkIfBot(realUserAgent).toString();
+	const SHOULD_PRERENDER = true;
 	const OLD_URI = request.uri;
 	const NEW_URI = OLD_URI.replace(/\/$/, '/index.html');
 	request.uri = NEW_URI;
