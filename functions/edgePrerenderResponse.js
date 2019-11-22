@@ -29,10 +29,8 @@ exports.handler = (event, context, callback) => {
 	const SHOULD_PRERENDER = request.headers['x-should-prerender'][0].value;
 	console.log('PRERENDER_URL includes "."?', PRERENDER_URL.includes('.'));
 
-	// Avoid requests for files
-	if (SHOULD_PRERENDER === 'true' && !PRERENDER_URL.includes('.')) {
-		// INFO: For various reasons, I've used http here, but feel free to change or improve this for your case
-		const URL = BASE_URL_RENDERER + 'http://' + HOST + PRERENDER_URL;
+	if (SHOULD_PRERENDER === 'true') {
+		const URL = BASE_URL_RENDERER + PRERENDER_URL;
 		console.log('Full rendering path', URL);
 
 		downloadContent(URL, (body, error) => {
@@ -44,7 +42,7 @@ exports.handler = (event, context, callback) => {
 				const newResponse = {
 					status: '200',
 					statusDescription: 'OK',
-					headers: response.headers,
+					//headers: response.headers,
 					body
 				};
 
